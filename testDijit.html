@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <title>Styling Dijit Form</title>
+    <link href="form.css" rel="stylesheet" />
+    <link href="/dojo/dojo/resources/dojo.css" rel="stylesheet" />
+    <link href="/dojo/dijit/themes/dijit.css" rel="stylesheet" />
+    <link href="/dojo/dijit/themes/tundra/form/Button.css" rel="stylesheet" />
+    <link href="/dojo/dijit/themes/tundra/Calendar.css" rel="stylesheet" />
+    <link href="/dojo/dijit/themes/tundra/form/Common.css" rel="stylesheet" />
+    
+    <script src="/dojo/dojo/dojo.js" djConfig="isDebug: false, parseOnLoad:true"></script>
+    <script>
+        dojo.require("dojo.parser");
+        dojo.require("dijit.form.Button");
+        dojo.require("dijit.form.TextBox");
+        dojo.require("dijit.form.TimeTextBox");
+        dojo.require("dijit.form.DateTextBox");
+        dojo.require("dijit.form.ValidationTextBox");
+        dojo.require("dijit.form.SimpleTextarea");
+        dojo.require("dijit.form.NumberSpinner");
+    </script>
+    
+    <style>
+        body{
+            margin:10px;
+        }
+        h1{
+            width:322px;
+            font-size:26px;
+            text-align:center;
+        }
+    </style>
+</head>
+<body class="tundra">
+    <h1>Styling Dijit Form Elements</h1>
+    <form class="myForm">
+
+        <input type="text" name="phone" id="phone" value="ValidationTextBox"
+                dojoType="dijit.form.ValidationTextBox"
+                regExp="[\w]+"
+                required="true"
+                invalidMessage="Invalid Non-Space Text." class="myField" />
+        <br/>
+        
+        <textarea dojoType="dijit.form.SimpleTextarea" class="myField" name="ta" cols="0">SimpleTextarea</textarea>
+        <br/>
+        
+        
+        <input type="text" name="email" dojoType="dijit.form.TextBox" value="TextBox" class="myField" />
+        <br/>
+        
+        <input type="text" name="time" dojoType="dijit.form.TimeTextBox" value="T09:00:00" class="myField" />
+        <br/>
+        
+        <input type="text" name="time" dojoType="dijit.form.DateTextBox" value="2005-12-30" class="myField" />
+        <br/>
+        
+        <input dojoType="dijit.form.NumberSpinner"
+            value="1000"
+            smallDelta="10"
+            constraints="{min:9,max:1550,places:0}"
+            id="spin1"
+            name="spin1"
+            class="myField"
+        />        
+        
+        <br/>
+       
+        <input dojoType="dijit.form.NumberSpinner"
+            value="2000"
+            smallDelta="10"
+            constraints="{min:9,max:2550,places:0}"
+            id="spin2"
+            name="spin2"
+            class="myField third"
+        />
+        
+        <input dojoType="dijit.form.NumberSpinner"
+            value="3000"
+            smallDelta="10"
+            constraints="{min:9,max:3550,places:0}"
+            id="spin3"
+            name="spin3"
+            class="myField third"
+        />
+        
+        <input type="text" name="time2" dojoType="dijit.form.TimeTextBox" value="T15:00:00" class="myField third" />
+        
+        <br/>
+        
+        <button dojoType="dijit.form.Button" class="myButton" tabIndex="2">Cancel</button>
+        <button dojoType="dijit.form.Button" class="myButton save" tabIndex="1">Save Form</button>
+        
+    </form>
+</body>
+</html>
